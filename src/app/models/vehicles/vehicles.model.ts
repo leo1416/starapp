@@ -1,4 +1,4 @@
-import { Deserializable } from './deserializable.model';
+import { Deserializable } from './../deserializable.model';
 
 export class Vehicles implements Deserializable{
     name: string;
@@ -21,15 +21,13 @@ export class Vehicles implements Deserializable{
     deserialize(input: any): this {
         Object.assign(this, input);
         this.films = input.films.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(27, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
 
         this.pilots = input.pilots.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(25, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
-        this.url = input.url.substring(30, input.url.length - 1);
+        this.url = input.url.replace('https://swapi.co/api','');
 
         return this;
     }

@@ -1,4 +1,4 @@
-import { Deserializable } from './deserializable.model';
+import { Deserializable } from './../deserializable.model';
 
 export class Species implements Deserializable{
     name: string;
@@ -21,17 +21,15 @@ export class Species implements Deserializable{
         Object.assign(this, input);
 
         this.films = input.films.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(27, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
 
         this.people = input.people.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(28, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
 
-        this.url = input.url.substring(29, input.url.length - 1);
-        this.homeworld = input.homeworld.substring(29, input.homeworld.length - 1);
+        this.url = input.url.replace('https://swapi.co/api','');
+        this.homeworld = input.homeworld.replace('https://swapi.co/api','');
         return this;
     }
 }

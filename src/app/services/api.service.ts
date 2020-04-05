@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Response } from '../models/response.model';
-import { People } from '../models/people.model';
-import { Planets } from '../models/planets.model';
-import { Films } from '../models/films.model';
-import { Species } from '../models/species.model';
-import { Vehicles } from '../models/vehicles.model';
-import { Starships } from '../models/starships.model';
+import { People } from '../models/people/people.model';
+import { Planets } from '../models/planets/planets.model';
+import { Films } from '../models/films/films.model';
+import { Species } from '../models/species/species.model';
+import { Vehicles } from '../models/vehicles/vehicles.model';
+import { Starships } from '../models/startships/starships.model';
 
 @Injectable({
   providedIn: 'root'

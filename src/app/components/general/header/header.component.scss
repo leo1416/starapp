@@ -1,0 +1,15 @@
+nav>a {
+    color: black;
+    padding: 5px;
+}
+
+nav>a.active {
+    color: white;
+    background-color: red;
+}
+
+nav>a:hover {
+    background-color: #980000;
+    color: white;
+    text-decoration: none;
+}

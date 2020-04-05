@@ -1,4 +1,4 @@
-import { Deserializable } from './deserializable.model';
+import { Deserializable } from './../deserializable.model';
 
 export class Films implements Deserializable{
     title: string; 
@@ -19,26 +19,21 @@ export class Films implements Deserializable{
     deserialize(input: any): this {
         Object.assign(this, input);
         this.characters = input.characters.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(28, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
         this.planets = input.planets.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(29, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
         this.starships = input.starships.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(31, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });
         this.vehicles = input.vehicles.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(30, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });        
         this.species = input.species.map((element: string) => {
-            let lengthString = element.length;
-            return element.substring(29, lengthString - 1);
+            return element.replace('https://swapi.co/api','');
         });        
-        this.url = input.url.substring(27, input.url.length - 1);
+        this.url = input.url.replace('https://swapi.co/api','');
         return this;
     }
 }
