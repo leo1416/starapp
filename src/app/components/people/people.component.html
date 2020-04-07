@@ -1,5 +1,79 @@
 <app-header></app-header>
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+            <div class="text-center">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" width="120" height="120">
+            </div>
+
+            <div class="text-center">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" width="120" height="120">
+            </div>
+
+            <div class="text-center">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" width="120" height="120">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" >
+                <div class="card-body">
+                    <p class="card-title">{{dataExample}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Height</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                        <tr>
+                            <td>Hair Color</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                        <tr>
+                            <td>Skin Color</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                        <tr>
+                            <td>Eye Color</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                        <tr>
+                            <td>Birth Year</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{dataExample}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="btn-group-vertical">
+                <a class="btn btn-primary" href="#" role="button">Home</a>
+                <a class="btn btn-primary" href="#" role="button">Films</a>
+                <a class="btn btn-primary" href="#" role="button">Species</a>
+                <a class="btn btn-primary" href="#" role="button">Starships</a>
+                <a class="btn btn-primary" href="#" role="button">Vehicles</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
 <ul>
-    <li *ngFor="let people of peoples">{{people.name}}</li>
+    <li *ngFor="let people of data">{{people.name}}</li>
 </ul>

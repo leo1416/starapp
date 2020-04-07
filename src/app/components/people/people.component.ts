@@ -11,7 +11,10 @@ export class PeopleComponent implements OnInit {
   count:number;
   next:string;
   previous:string;
-  peoples: People[];
+  data: People[];
+  dataExample = "Example";
+  image_example = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4M_Ld3qE4g20VBURWYOEX2Ans3x91cRmrmw-6l87F8SkXc5gi&usqp=CAU"
+
 
   constructor(private apiService: ApiService){
   }
@@ -25,7 +28,7 @@ export class PeopleComponent implements OnInit {
       this.count = response.count;
       this.next = response.next;
       this.previous = response.previous;
-      this.peoples = response.results;
+      this.data = response.results;
     })
   }
 
