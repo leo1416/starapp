@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../../services/api.service';
-import {People} from '../../models/people/people.model';
+import { ApiService } from '../../services/api.service';
+import { People } from '../../models/people/people.model';
 
 @Component({
   selector: 'app-people',
@@ -8,15 +8,15 @@ import {People} from '../../models/people/people.model';
   styleUrls: ['./people.component.scss']
 })
 export class PeopleComponent implements OnInit {
-  count:number;
-  next:string;
-  previous:string;
+  count: number;
+  next: string;
+  previous: string;
   data: People[];
-  dataExample = "Example";
-  image_example = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4M_Ld3qE4g20VBURWYOEX2Ans3x91cRmrmw-6l87F8SkXc5gi&usqp=CAU"
+  select_data: People;
+  image_example = "https://wipy.tv/wp-content/uploads/2020/03/lightsaber-de-luke-skywalker.jpg"
 
 
-  constructor(private apiService: ApiService){
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
@@ -29,7 +29,36 @@ export class PeopleComponent implements OnInit {
       this.next = response.next;
       this.previous = response.previous;
       this.data = response.results;
+      this.select_data = this.data[0];
     })
+  }
+
+  public getNextPeople() {
+    if (this.next != null) {
+      this.apiService.getAllPeople(this.next).subscribe(response => {
+        this.count = response.count;
+        this.next = response.next;
+        this.previous = response.previous;
+        this.data = response.results;
+        this.select_data = this.data[0];
+      })
+    }
+  }
+
+  public getPreviousPeople() {
+    if (this.next != null) {
+      this.apiService.getAllPeople(this.previous).subscribe(response => {
+        this.count = response.count;
+        this.next = response.next;
+        this.previous = response.previous;
+        this.data = response.results;
+        this.select_data = this.data[0];
+      })
+    }
+  }
+
+  public select(selected: People){
+    this.select_data = selected;
   }
 
 

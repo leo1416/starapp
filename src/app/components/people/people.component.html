@@ -20,7 +20,7 @@
             <div class="card">
                 <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" >
                 <div class="card-body">
-                    <p class="card-title">{{dataExample}}</p>
+                    <p class="card-title">{{select_data.name}}</p>
                 </div>
             </div>
         </div>
@@ -31,31 +31,31 @@
                     <tbody>
                         <tr>
                             <td>Height</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.height}}</td>
                         </tr>
                         <tr>
                             <td>Mass</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.mass}}</td>
                         </tr>
                         <tr>
                             <td>Hair Color</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.hair_color}}</td>
                         </tr>
                         <tr>
                             <td>Skin Color</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.skin_color}}</td>
                         </tr>
                         <tr>
                             <td>Eye Color</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.eye_color}}</td>
                         </tr>
                         <tr>
                             <td>Birth Year</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.birth_year}}</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td>{{dataExample}}</td>
+                            <td>{{select_data.gender}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -73,7 +73,24 @@
             
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary" *ngIf="previous != null" (click)="getPreviousPeople()">Atras</button>
+                <button type="button" class="btn btn-secondary" *ngIf="next != null" (click)="getNextPeople()">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+               
+        <div class="list-group">
+            <a *ngFor="let people of data; index as i; first as isFirst" class="list-group-item list-group-item-action" (click)="select(people)">
+                <strong>{{people.name}} </strong>
+            </a>
+        </div>
+    </div>
 </div>
-<ul>
-    <li *ngFor="let people of data">{{people.name}}</li>
-</ul>
+
+
