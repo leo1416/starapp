@@ -1,5 +1,96 @@
 <app-header></app-header>
 
-<ul>
-    <li *ngFor="let people of peoples">{{people.name}}</li>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+            <div class="text-center">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" width="120" height="120">
+            </div>
+
+            <div class="text-center">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" width="120" height="120">
+            </div>
+
+            <div class="text-center">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" width="120" height="120">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <img src="{{image_example}}" class="img-thumbnail img-fluid" alt="{{image_example}}" >
+                <div class="card-body">
+                    <p class="card-title">{{select_data.name}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Height</td>
+                            <td>{{select_data.height}}</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td>{{select_data.mass}}</td>
+                        </tr>
+                        <tr>
+                            <td>Hair Color</td>
+                            <td>{{select_data.hair_color}}</td>
+                        </tr>
+                        <tr>
+                            <td>Skin Color</td>
+                            <td>{{select_data.skin_color}}</td>
+                        </tr>
+                        <tr>
+                            <td>Eye Color</td>
+                            <td>{{select_data.eye_color}}</td>
+                        </tr>
+                        <tr>
+                            <td>Birth Year</td>
+                            <td>{{select_data.birth_year}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{select_data.gender}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="btn-group-vertical">
+                <a class="btn btn-primary" href="#" role="button">Home</a>
+                <a class="btn btn-primary" href="#" role="button">Films</a>
+                <a class="btn btn-primary" href="#" role="button">Species</a>
+                <a class="btn btn-primary" href="#" role="button">Starships</a>
+                <a class="btn btn-primary" href="#" role="button">Vehicles</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary" *ngIf="previous != null" (click)="getPreviousPeople()">Atras</button>
+                <button type="button" class="btn btn-secondary" *ngIf="next != null" (click)="getNextPeople()">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+               
+        <div class="list-group">
+            <a *ngFor="let people of data; index as i; first as isFirst" class="list-group-item list-group-item-action" (click)="select(people)">
+                <strong>{{people.name}} </strong>
+            </a>
+        </div>
+    </div>
+</div>
+
+
