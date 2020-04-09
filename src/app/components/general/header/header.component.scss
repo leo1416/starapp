@@ -1,15 +1,110 @@
-nav>a {
-    color: black;
-    padding: 5px;
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    padding: 0px 20px 0px 0px;
 }
 
-nav>a.active {
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0px 20px 0px 20px;
+    }
+    .header .navbar {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: auto !important;
+    }
+    div.navbar-collapse.collapse.show {
+        button.navbar-toggler {
+            margin-top: 20px;
+        }
+    }
+    .navbar .nav-link {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form.form-inline {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    .navbar-nav .nav-item:hover:nth-child(1) .nav-link,
+    .navbar-nav .nav-item:nth-child(1) .nav-link.active {
+        border-radius: 0px !important;
+    }
+}
+
+.navbar .nav-link {
+    font-weight: 600;
     color: white;
-    background-color: red;
+    padding: 10px;
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-nav>a:hover {
+.header .navbar {
+    background-color: #FC1506 !important;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 8px;
+}
+
+.successBtn {
+    color: #980000;
+    border-color: #980000;
+    font-weight: 700;
+    border: 3px solid #980000;
+}
+
+.successBtn:hover {
+    color: white;
+    background-color: #980000;
+}
+
+.successBtn:focus {
+    color: #980000;
+    background-color: white;
+    border: 3px solid white !important;
+    box-shadow: none;
+}
+
+.navbar .navbar-toggler .span {
+    color: white;
+}
+
+.navbar .active {
+    color: white;
+    background-color: #980000;
+}
+
+.navbar-nav .nav-item:hover:nth-child(1) .nav-link,
+.navbar-nav .nav-item:nth-child(1) .nav-link.active {
+    border-radius: 8px 0px 0px 8px;
+}
+
+.nav-link:hover {
     background-color: #980000;
     color: white;
     text-decoration: none;
+}
+
+.collapse,
+.navbar-nav,
+li.nav-item {
+    height: 100%;
 }
