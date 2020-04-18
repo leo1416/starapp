@@ -1,0 +1,103 @@
+
+.container {
+    border: 2px solid black;
+    height: 73vh;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .containerGrid {
+    border: 2px solid black;
+    height: 410px;
+    max-height: -webkit-fill-available;
+    width: 256px;
+    grid-template-columns: 25px 88px 25px 88px 25px;
+    grid-template-rows: 15px 85px 11px 85px 11px 85px 11px 85px 15px;
+    display: grid;
+}
+
+.containerGrid .containerItem {
+    border: 2px solid black;
+    width: 89px;
+    height: 87px;
+}
+
+.containerGrid .containerItem:nth-child(1){
+    background-image: url('../../../assets/Img/Films1.jpg');
+    background-size: 89px 78px;
+    grid-column-start: 2;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 2;
+    background-color: red;
+}
+
+.containerGrid .containerItem:nth-child(2){
+    grid-column-start: 4;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 2;
+    background-color: red;
+}
+
+.containerGrid .containerItem:nth-child(3){
+    grid-column-start: 2;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 4;
+    background-color: red;
+}
+
+.containerGrid .containerItem:nth-child(4){
+    grid-column-start: 4;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 4;
+    background-color: red;
+}
+
+.containerGrid .containerItem:nth-child(5){
+    grid-column-start: 2;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 6;
+    background-color: red;
+}
+
+.containerGrid .containerItem:nth-child(6){
+    grid-column-start: 4;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 6;
+    background-color: red;
+}
+
+.containerGrid .containerItem:nth-child(7){
+    grid-column-start: 2;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 8;
+    background-color: red;
+}
+
+.containerImage {
+    border: 2px solid black;
+    height: 350px;
+    width: 300px;
+
+}
+
+.containerTable {
+    border: 2px solid black;
+    height: 400px;
+    width: 300px;
+}
+
+.containerButtons {
+    border: 2px solid black;
+    height: 400px;
+    width: 150px;
+}
