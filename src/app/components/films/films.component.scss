@@ -85,8 +85,30 @@
 
 .containerImage {
     border: 2px solid black;
-    height: 350px;
+    height: 400px;
     width: 300px;
+    .flex-container {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        border: 1px solid silver;
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+      }
+      .wrap    { 
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }  
+      .wrap li {
+        background: gold;
+      }
+      
+      
 
 }
 
@@ -94,10 +116,30 @@
     border: 2px solid black;
     height: 400px;
     width: 300px;
+    
 }
 
 .containerButtons {
     border: 2px solid black;
     height: 400px;
     width: 150px;
+
+    .btn-group-vertical {
+        background-color: #FC1506; /* Green background */
+        border: 1px solid red; /* Green border */
+        color: white; /* White text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        width: 50%; /* Set a width if needed */
+        display: block; /* Make the buttons appear below each other */
+      }
+      
+      .btn-group-vertical:not(:last-child) {
+        border-bottom: none; /* Prevent double borders */
+      }
+      
+      /* Add a background color on hover */
+      .btn-group-vertical:hover {
+        background-color: #FC1506;
+      }
 }
